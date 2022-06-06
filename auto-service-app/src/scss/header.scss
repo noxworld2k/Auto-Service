@@ -1,0 +1,51 @@
+
+.full-width {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+
+  div {
+    img {
+      width: 80px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 1rem;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #0031d4;
+  color: white;
+  text-decoration: none;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.nav__logo {
+  flex-grow: 1;
+}
