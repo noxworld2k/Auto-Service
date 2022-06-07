@@ -7,7 +7,7 @@
 .container {
   display: flex;
   justify-content: space-between;
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
 
   div {
@@ -22,12 +22,17 @@
 
     li {
       list-style: none;
+      margin-right: 15px;
+
 
       a {
         text-decoration: none;
-        color: black;
         font-size: 1rem;
         margin-left: 20px;
+        background: #0031d4;
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: white;
       }
     }
   }
