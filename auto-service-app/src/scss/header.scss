@@ -14,9 +14,7 @@
 }
   div {
     align-items: center;
-    img {
-      width: 160px;
-    }
+
 
     ul {
       display: flex;
@@ -57,4 +55,7 @@
 
 .nav__logo {
   flex-grow: 1;
+}
+.logo {
+  width: 160px;
 }

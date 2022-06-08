@@ -5,7 +5,7 @@ function Header() {
         <div className="full-width">
             <header className="container">
                 <div className="nav__logo">
-                    <img src={logo}  alt="logo" />
+                    <img src={logo}  alt="logo" className="logo"/>
                 </div>
                 <div className="nav__menu">
                     <ul>
