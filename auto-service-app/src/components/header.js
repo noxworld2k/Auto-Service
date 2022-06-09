@@ -1,5 +1,8 @@
 import logo from "../images/logo.jpg";
 import "../scss/header.scss";
+import {Link} from "react-router-dom";
+
+
 function Header() {
     return (
         <div className="full-width">
@@ -9,10 +12,10 @@ function Header() {
                 </div>
                 <div className="nav__menu">
                     <ul>
-                        <li ><a href="#">Home Page</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Reservation</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li ><Link to="/">Home Page</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/">Reservation</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                         <a href="#" className="btn login__button">Login</a>
                     </ul>
                 </div>
@@ -22,3 +25,6 @@ function Header() {
 }
 
 export default Header;
+
+npm i @react-firebase/auth
+npm i
