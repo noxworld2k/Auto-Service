@@ -16,7 +16,7 @@ function Header() {
                         <li><Link to="/about">About Us</Link></li>
                         <li><Link to="/">Reservation</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
-                        <a href="#" className="btn login__button">Login</a>
+                        <li><Link to="/login">Login</Link></li>
                     </ul>
                 </div>
             </header>

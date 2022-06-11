@@ -1,25 +1,11 @@
-import firebase from "firebase/app";
+import React from 'react';
+import ContactMain from "./contact";
+import AboutUsMain from "./about";
 import "firebase/auth";
 import './App.css';
-import Header from "./components/header";
-import Maincontent from "./components/maincontent";
-import Blurbs from "./components/blurbs";
-import ContactMain from "./contact";
-import AboutUs from "./components/aboutUs";
-import Footer from "./components/footer";
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import AboutUsMain from "./about";
-import {
-    HashRouter,
-    Route,
-    Routes,
-    Router,
-    Link,
-    Switch,
-    NavLink,
-} from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Main from "./main";
+import Login from "./login";
 
 function App() {
     return (
@@ -28,6 +14,7 @@ function App() {
                 <Route index element={<Main />} />
                 <Route path="/contact" element={<ContactMain/>}/>
                 <Route path="/about" element={<AboutUsMain/>}/>
+                <Route path="/login" element={<Login/>}/>
             </Routes>
         </HashRouter>
 

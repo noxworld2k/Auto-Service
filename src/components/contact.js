@@ -1,5 +1,6 @@
 import "../scss/contact.scss";
 
+
 function Contact() {
     return (
         <section className="contact__section">
@@ -15,7 +16,7 @@ function Contact() {
                 <div className="form__box">
                     <form>
                         <label>
-                            Imie i nazwisko: <input type="text"/>
+                            Imie i nazwisko: <input type="text" />
                         </label>
                         <label>
                             Email: <input type="email"/>
@@ -27,6 +28,7 @@ function Contact() {
                     </form>
 
                 </div>
+
             </div>
 
         </section>
