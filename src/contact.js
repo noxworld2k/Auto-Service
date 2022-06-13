@@ -1,6 +1,7 @@
 import Header from "./components/header";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
+import ContactUs from "./components/contactFormJS";
 
 
 function ContactMain() {
@@ -8,6 +9,7 @@ function ContactMain() {
             <>
             <Header/>
                 <Contact/>
+                {/*<ContactUs/>*/}
                 <Footer/>
 
             </>

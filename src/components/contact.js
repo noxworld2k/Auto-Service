@@ -1,4 +1,5 @@
 import "../scss/contact.scss";
+import ContactFormJS from "./contactFormJS";
 
 
 function Contact() {
@@ -13,21 +14,7 @@ function Contact() {
                         Jakieś tam pierdoły
                     </p>
                 </div>
-                <div className="form__box">
-                    <form>
-                        <label>
-                            Imie i nazwisko: <input type="text" />
-                        </label>
-                        <label>
-                            Email: <input type="email"/>
-                        </label>
-                        <label>
-                            Wiadomość: <textarea/>
-                        </label>
-                        <button type="submit">Send message to Messiah</button>
-                    </form>
-
-                </div>
+                <ContactFormJS/>
 
             </div>
 

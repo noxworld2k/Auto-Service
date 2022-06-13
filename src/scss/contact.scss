@@ -77,5 +77,14 @@
       border: none;
       border-radius: 5px;
     }
+    .message__result {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 15px 0;
+        padding: 0;
+        text-align: center;
+        border-radius: 30px;
+        background-color: #79dc63;
+    }
   }
 }

@@ -3,25 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@react-firebase/auth": "^0.2.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
-    "dns": "^0.2.2",
-    "express": "^4.18.1",
     "firebase": "^9.8.3",
     "firebase-admin": "^10.3.0",
-    "mongodb": "^4.7.0",
     "node-polyfill-webpack-plugin": "^1.1.4",
+    "polyfill": "^0.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "sass": "^1.52.2",
-    "stream": "^0.0.2",
-    "timers-browserify": "^2.0.12",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.73.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -49,17 +47,8 @@
     ]
   },
   "devDependencies": {
-    "assert": "^2.0.0",
-    "buffer": "^6.0.3",
-    "crypto-browserify": "^3.12.0",
-    "https-browserify": "^1.0.0",
-    "os-browserify": "^0.3.0",
-    "path-browserify": "^1.0.1",
-    "process": "^0.11.10",
-    "react-app-rewired": "^2.2.1",
-    "stream-browserify": "^3.0.0",
-    "stream-http": "^3.2.0",
-    "url": "^0.11.0"
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "react-app-rewired": "^2.2.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "config-overrides.js",
@@ -73,5 +62,5 @@
   "bugs": {
     "url": "https://github.com/noxworld2k/Auto-Service/issues"
   },
-  "homepage": "https://github.com/noxworld2k/Auto-Service#readme"
+  "homepage": "/"
 }
