@@ -6,7 +6,7 @@ const docRef = await addDoc(collection(db, "users"));
 
 
 function addUserData(userData) {
-    return docRef.add(userData);
+    return docRef.addDoc(userData);
 }
 
 

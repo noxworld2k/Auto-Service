@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import "../scss/RegistrationForm.scss";
-import addUserData from "../functions/addUser";
+// import addUserData from "../functions/addUser";
 
 
 function RegistrationForm() {
@@ -15,7 +15,7 @@ function RegistrationForm() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        addUserData(user);
+        // addUserData(user);
         }
 
 
@@ -23,8 +23,6 @@ function RegistrationForm() {
     const onChange = e => {
         setUser({...user, [e.target.name]: e.target.value});
         };
-
-
 
 
 

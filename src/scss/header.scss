@@ -2,6 +2,7 @@
 .full-width {
   width: 100%;
   margin: 0 auto;
+  background: #232228;
 }
 
 
@@ -28,13 +29,18 @@
 
 
       a {
+
         text-decoration: none;
         font-size: 1rem;
         margin-left: 20px;
-        background: rgb(0, 60, 255);
-        border-radius: 5px;
-        padding: 5px 10px;
+        background: rgba(26, 25, 25, 0.32);
+        border-bottom: 2px solid #057c66;
+        border-top: 2px solid #057c66;
+        padding: 40px 10px;
         color: white;
+      }
+      a:hover {
+        background: rgba(104, 112, 112, 0.53);
       }
     }
   }
@@ -58,4 +64,5 @@
 }
 .logo {
   width: 160px;
+  padding: 20px 10px ;
 }

@@ -1,6 +1,15 @@
-
+import React from "react";
 import "../scss/maincontent.scss";
+import addUserToDataBase from "./test.js";
+import AddUserToDataBase from "../functions/test";
+
+
+
 function MainContent() {
+
+
+
+
     return (
       <div className="main__content">
           <div>
@@ -15,6 +24,10 @@ function MainContent() {
 
               <a href="#">Reservation</a>
               <a href="#">Register</a>
+
+              <AddUserToDataBase />
+
+
           </div>
       </div>
     );

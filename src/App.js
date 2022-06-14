@@ -2,7 +2,7 @@ import React from 'react';
 import ContactMain from "./contact";
 import AboutUsMain from "./about";
 import "firebase/auth";
-import './App.css';
+import './scss/main.scss';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Main from "./main";
 import Login from "./login";

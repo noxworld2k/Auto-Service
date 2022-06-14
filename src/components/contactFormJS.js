@@ -8,7 +8,7 @@ const resultStyle = {
     margin: "15px 0",
     padding: "0",
     textAlign: "center",
-    borderRadius: "20px",
+    borderRadius: "20%",
     backgroundColor: "#79dc63"
 }
 
