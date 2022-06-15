@@ -1,9 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "../scss/client.scss";
-import client1 from "../images/photo1.png";
-import client2 from "../images/photo2.png";
-import client3 from "../images/photo3.png";
+import client1 from "../images/Photo.png";
 import client from "../images/Client.jpg";
 
 
@@ -37,11 +35,7 @@ function Client() {
             </div>
 
             <div className="client__images">
-              <div className="client__images-absolut">
                 <img className="client__images-1" src={client1}/>
-                <img className="client__images-2" src={client2}/>
-                <img className="client__images-3" src={client3}/>
-              </div>
             </div>
           </div>
 
