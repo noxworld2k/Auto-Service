@@ -1,36 +1,41 @@
+import React from "react";
 import "../scss/aboutUs.scss";
-import vision from "../images/ourvision.webp";
-import about from "../images/about1.jpg";
+import {Link} from "react-router-dom";
+import aboutus1 from "../images/aboutus/1i.jpg";
+import aboutus2 from "../images/aboutus/2i.jpg";
+
 
 function AboutUs() {
     return (
-        <div className="aboutUs">
-            <div className="container">
-                <div className="aboutUs__container__content">
-                    <h2>
-                        About Us
-                    </h2>
-                    <img src={about} />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisi vel consectetur euismod,
-                        nisi nisl consectetur nisi, euismod euismod nisi
-                        nisl euismod nisi.
-                    </p>
+        <section className="aboutus__container">
+            <div className="container" >
+                <div className="aboutus__container__images">
+                    <img src={aboutus1} className="img1"/>
+                    <img src={aboutus2} className="img2"/>
 
                 </div>
-                <div className="aboutUs__container__content">
-                    <h3>Our Vision</h3>
-                    <img src={vision}/>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisi vel consectetur euismod,
-                        nisi nisl consectetur nisi, euismod euismod nisi
-                        nisl euismod nisi.
-                    </p>
+
+                <div className="aboutus__content">
+                    <div className="aboutus__content__text">
+                        <div className="aboutus__content__text-title">
+                            <h1>About</h1>
+                            <h2>Us</h2>
+                        </div>
+
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Donec euismod, nisl eget consectetur sagittis,
+                            nisl nisi consectetur nisi, euismod eget nisl nisi
+                            consectetur nisi.
+                        </p>
+                        <Link className="about-link" to="/about">Read More</Link>
+                    </div>
                 </div>
             </div>
-        </div>
+
+        </section>
+
     )
 }
 

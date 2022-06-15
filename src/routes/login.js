@@ -1,8 +1,8 @@
 import React from "react";
-import RegistrationForm from "./components/RegistrationForm";
-import Footer from "./components/footer";
-import Header from "./components/header";
-import "./scss/login.scss";
+import RegistrationForm from "../components/RegistrationForm";
+import Footer from "../components/footer";
+import Header from "../components/header";
+import "../scss/login.scss";
 
 function Login () {
     return (

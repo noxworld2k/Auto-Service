@@ -6,11 +6,16 @@
 @import "blurbs";
 @import "contact";
 @import "footer";
+@import "client";
 
 root {
-  font-family: 'Lato', sans-serif;
-  color: #ffffff;
-    background-color: #232228;
+
+ span,p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+   color: #ffffff;
+
+ }
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
