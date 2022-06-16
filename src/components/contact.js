@@ -1,24 +1,38 @@
 import "../scss/contact.scss";
 import ContactFormJS from "./contactFormJS";
+import MapComponent, {Map} from "./map/Map";
 
+const location = {
+    address: 'Koszulki.Shop Piaskowa 18, Rybie.',
+    lat: 52.15733351715033,
+    lng: 20.940302645284405,
+}
 
 function Contact() {
     return (
         <section className="contact__section">
-            <div className="container">
+
                 <div className="contact__box">
                     <h2>
-                        Zapraszamy do kontaktu
+                        Please Contact Us
                     </h2>
                     <p>
-                        Jakieś tam pierdoły
+                        Lorem ipsum dolor sit amet, consectetur.
                     </p>
+                    <ContactFormJS/>
                 </div>
-                <ContactFormJS/>
+                <div className="contact__map">
+                    <h2>
+                        Our Localization
+                    </h2>
+                    <MapComponent location={location}/>
+                </div>
 
-            </div>
+
+
 
         </section>
-        )
+    )
 }
+
 export default Contact;

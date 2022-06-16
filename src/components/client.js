@@ -4,16 +4,10 @@ import "../scss/client.scss";
 import client1 from "../images/Photo.png";
 import client from "../images/Client.jpg";
 
-
-
-
 function Client() {
   return (
       <>
-        <div className="book__repair">
-          <h1>REGISTER AND BOOK A REPAIR</h1>
-          <Link to="/">CHECK DATES</Link>
-        </div>
+
         <section className="client">
           <div className="container">
             <div className="client__desc">
@@ -37,6 +31,10 @@ function Client() {
             <div className="client__images">
                 <img className="client__images-1" src={client1}/>
             </div>
+          </div>
+          <div className="book__repair">
+            <h1>REGISTER AND BOOK A REPAIR</h1>
+            <Link to="/">CHECK DATES</Link>
           </div>
 
         </section>

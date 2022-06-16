@@ -9,6 +9,11 @@ function Blurbs() {
     return (
         <>
         <section className="blurbs__section">
+            <div className="blurbs__box">
+                <h1>
+                    REGISTER AND BOOK A REPAIR
+                </h1>
+            </div>
             <div className="container blurb">
                 <div className="blurb__box">
                     <img src={img1} />

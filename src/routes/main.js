@@ -6,6 +6,7 @@ import Blurbs from "../components/blurbs";
 import Footer from "../components/footer";
 import AboutUs from "../components/aboutUs";
 import Client from "../components/client";
+import Contact from "../components/contact";
 
 
 function Main() {
@@ -16,6 +17,7 @@ function Main() {
             <AboutUs/>
             <Blurbs/>
             <Client/>
+            <Contact/>
             <Footer/>
         </>
 

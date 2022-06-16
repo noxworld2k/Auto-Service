@@ -42,15 +42,11 @@ const ContactUs = () => {
     return (
         <div className="form__box">
             <form ref={form} onSubmit={sendEmail} name={admin}>
-                <label>Name</label>
-                <input type="text" name="user_name"/>
-                <label>Email</label>
-                <input type="email" name="user_email"/>
-                <input type="date" name="start_date"/>
-                <label>Message</label>
-                <textarea name="message"/>
-                <input type="submit" onClick={handleClick}  value="Send Message to Prophet NoX"/>
-
+                <input type="text" required="true" name="user_name" placeholder="Enter Your Name"/>
+                <input type="email" required="true" name="user_email" placeholder="Enter Your Email"/>
+                <input type="date" required="true" name="start_date" placeholder="Get Repair Date"/>
+                <textarea name="message" required="true" placeholder="Write something about your car"/>
+                <button type="submit" onClick={handleClick} >Send Message</button>
             </form>
             <div style={resultStyle}>
                 <p>

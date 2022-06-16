@@ -23,9 +23,10 @@ function AboutUs() {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Donec euismod, nisl eget consectetur sagittis,
                             nisl nisi consectetur nisi, euismod eget nisl nisi
+                            consectetur nisi. nisl nisi consectetur nisi, euismod eget nisl nisi
                             consectetur nisi.
                         </p>
-                        <Link className="about-link" to="/about">Read More</Link>
+                        <Link className="about-link" to="/about">Learn More</Link>
                     </div>
                 </div>
 
