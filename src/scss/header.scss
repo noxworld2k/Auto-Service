@@ -29,18 +29,18 @@
 
 
       a {
-
+        font-family: 'Lato', sans-serif;
         text-decoration: none;
         font-size: 1rem;
         margin-left: 20px;
-        background: rgba(26, 25, 25, 0.32);
-        border-bottom: 2px solid #057c66;
-        border-top: 2px solid #057c66;
-        padding: 40px 10px;
         color: white;
       }
       a:hover {
-        background: rgba(104, 112, 112, 0.53);
+        color: #4752c9;
+      }
+      a:active {
+        color: #478ac9;
+        text-decoration: none;
       }
     }
   }
@@ -57,12 +57,12 @@
     color: white;
     text-decoration: none;
   }
+
 }
 
 .nav__logo {
   flex-grow: 1;
 }
 .logo {
-  width: 160px;
-  padding: 20px 10px ;
+  max-height: 47px;
 }
