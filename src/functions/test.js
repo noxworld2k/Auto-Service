@@ -30,6 +30,20 @@ export default function AddUserToDataBase() {
         });
     };
 
+    const collection = async (uid, name, price, descripion, day, ) => {
+        const fields = {
+            uid: uid,
+            name: name,
+            price: price,
+            description: descripion,
+            day: day,
+        }
+        await querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+        });
+    }
+
+
     const updateUser = async (id, name, email, phone, address, city) => {
         const userDoc = doc(db, "users", id);
         const newFields = {
@@ -54,7 +68,6 @@ export default function AddUserToDataBase() {
                 ...doc.data(), id: doc.id
             })))
         };
-
         getUsers();
     }, []);
 

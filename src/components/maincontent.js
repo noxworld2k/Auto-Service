@@ -6,13 +6,10 @@ function MainContent() {
 
 
     return (
-
-
-
         <div className="main__content">
             <div className="main__content__filter">
             <div>
-                <div className="title__container">
+                <div  className="title__container">
                     <h1 className="car">
                         Car
                     </h1>
@@ -26,8 +23,6 @@ function MainContent() {
                     Quisquam, quidem. Quisquam, quidem. Quisquam, quidem.
                     Quisquam, quidem. Quisquam, quidem. Quisquam, quidem.
                 </p>
-                <a href="#">Reservation</a>
-                <a href="#">Register</a>
             </div>
             </div>
         </div>

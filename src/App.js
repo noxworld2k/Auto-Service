@@ -16,7 +16,7 @@ function App() {
                 <Route path="/contact" element={<ContactMain/>}/>
                 <Route path="/about" element={<AboutUsMain/>}/>
                 <Route path="/login" element={<Login/>}/>
-                {/*<Route path="/login" element={<Admin/>}/>*/}
+                <Route path="/admin" element={<Admin/>}/>
             </Routes>
         </HashRouter>
 
