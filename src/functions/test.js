@@ -30,26 +30,13 @@ export default function AddUserToDataBase() {
         });
     };
 
-    const collection = async (uid, name, price, descripion, day, ) => {
-        const fields = {
-            uid: uid,
-            name: name,
-            price: price,
-            description: descripion,
-            day: day,
-        }
-        await querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data());
-        });
-    }
-
 
     const updateUser = async (id, name, email, phone, address, city) => {
         const userDoc = doc(db, "users", id);
         const newFields = {
             name: name,
             email: email,
-            phone: Number(phone),
+            phone: phone,
             address: address,
             city: city
         };
@@ -74,10 +61,14 @@ export default function AddUserToDataBase() {
     return (
         <div className="App">
             <input
+                type="text"
+                value={newName}
+                name={newName}
+                onChange={(e) => setNewName(e.target.value)}
                 placeholder="Name..."
-                onChange={(event) => {
-                    event.preventDefault();
-                    setNewName(event.target.value);
+
+            />
+
                 }}
             />
             <input

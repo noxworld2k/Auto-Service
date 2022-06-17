@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 
 const usersCollectionRef = collection(db, "Users");
+
 class UserDataService {
     addUser = (newUser) => {
         return addDoc(usersCollectionRef, newUser);

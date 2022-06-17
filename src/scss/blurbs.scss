@@ -28,6 +28,7 @@
 
   }
   .blurb {
+    flex-wrap: wrap;
     align-items: flex-start;
   }
 
@@ -56,6 +57,7 @@
 }
 
 .blurb__box {
+  flex: 1 1 0;
   margin: 2rem;
   display: flex;
   align-content: center;

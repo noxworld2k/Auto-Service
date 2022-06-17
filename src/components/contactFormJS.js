@@ -5,11 +5,10 @@ import "../scss/contact.scss";
 const resultStyle = {
     fontSize: "1.5rem",
     fontWeight: "bold",
-    margin: "15px 0",
-    padding: "0",
+    margin: "15px auto",
     textAlign: "center",
-    borderRadius: "20%",
-    backgroundColor: "#79dc63"
+    borderRadius: "30px",
+    backgroundColor: "#057a66"
 }
 
 
@@ -23,8 +22,7 @@ const ContactUs = () => {
         e.preventDefault();
         emailjs.sendForm('service_0qmkssq', 'template_yp4zw2l', form.current, 'HXGMavF3GHeyGRM3U')
             .then(() =>
-                setSubmit('Message sent!')
-            )
+                setSubmit("Thank you for your message!"))
             .catch(() =>
                 setSubmit('Message not sent!')
             );
@@ -42,10 +40,10 @@ const ContactUs = () => {
     return (
         <div className="form__box">
             <form ref={form} onSubmit={sendEmail} name={admin}>
-                <input type="text" required="true" name="user_name" placeholder="Enter Your Name"/>
-                <input type="email" required="true" name="user_email" placeholder="Enter Your Email"/>
-                <input type="date" required="true" name="start_date" placeholder="Get Repair Date"/>
-                <textarea name="message" required="true" placeholder="Write something about your car"/>
+                <input type="text" required={true} name="user_name" placeholder="Enter Your Name"/>
+                <input type="email" required={true} name="user_email" placeholder="Enter Your Email"/>
+                <input type="date" required={true} name="start_date" placeholder="Get Repair Date"/>
+                <textarea name="message" required={true} placeholder="Write something about your car"/>
                 <button type="submit" onClick={handleClick} >Send Message</button>
             </form>
             <div style={resultStyle}>
