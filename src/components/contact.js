@@ -11,7 +11,7 @@ const location = {
 function Contact() {
     return (
         <section className="contact__section">
-
+            <div className="container__contact">
                 <div className="contact__box">
                     <h2>
                         Please Contact Us
@@ -27,6 +27,8 @@ function Contact() {
                     </h2>
                     <MapComponent location={location}/>
                 </div>
+
+            </div>
 
 
 
