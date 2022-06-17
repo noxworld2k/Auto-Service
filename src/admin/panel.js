@@ -7,9 +7,6 @@ function AdminPanel() {
         <div className="admin">
             <h1>Admin Panel</h1>
             <div className="container flex">
-                <h2>
-                    All Users from DataBase
-                </h2>
                 <UsersFromDataBase/>
             </div>
 

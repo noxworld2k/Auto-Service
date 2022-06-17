@@ -1,13 +1,14 @@
 import Header from "../components/header";
-import AboutUs from "../components/aboutUs";
+import AboutUsPage from "../components/aboutus/AboutUsPage";
 import Footer from "../components/footer";
+
 
 
 function AboutUsMain() {
     return (
         <>
             <Header/>
-            <AboutUs/>
+            <AboutUsPage/>
             <Footer/>
 
         </>

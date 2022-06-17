@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import "../scss/RegistrationForm.scss";
-import {Link} from "react-router-dom";
 import addUserData from "../functions/addUser";
 
 
 function RegistrationForm() {
-
     const [user, setUser] = useState({});
     const handleSubmit = e => {
         e.preventDefault();
@@ -21,17 +19,17 @@ function RegistrationForm() {
         }
     }
 
-   const handleInputChange = (e) => {
+    const handleInputChange = (e) => {
         const target = e.target;
         const name = target.name;
         setUser({...user, [name]: target.value});
-        }
-
+    }
 
 
     console.log(user);
 
     return (
+        <section className="form__section">
         <div className="container">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -48,7 +46,7 @@ function RegistrationForm() {
                 <div className="form-group">
                     <label form={'password'}>Password</label>
                     <input type="password"
-                            name="password"
+                           name="password"
                            value={user.password}
                            onChange={handleInputChange}
                            className="form-control"
@@ -58,7 +56,7 @@ function RegistrationForm() {
                 <div className="form-group">
                     <label form={'repeatPassword'}>Confirm Password</label>
                     <input type="password"
-                            name="repeatPassword"
+                           name="repeatPassword"
                            onChange={handleInputChange}
                            className="form-control"
                            id="passwordConfirmation"
@@ -67,7 +65,7 @@ function RegistrationForm() {
                 <div className="form-group">
                     <label form={'email'}>Email</label>
                     <input type="email"
-                            name="email"
+                           name="email"
                            value={user.email}
                            onChange={handleInputChange}
                            className="form-control" id="email"
@@ -81,6 +79,7 @@ function RegistrationForm() {
                 </div>
             </form>
         </div>
+        </section>
     );
 }
 

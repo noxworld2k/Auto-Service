@@ -1,43 +1,40 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {db} from "../config";
 import "../scss/admin/users.scss"
-import {collection, getDocs, addDoc, updateDoc, deleteDoc, doc} from "firebase/firestore";
+import {addDoc, collection, deleteDoc, doc, getDocs, updateDoc} from "firebase/firestore";
 
-// function mapFormUserValues() {
-//     return {
-//         nickname: nickname,
-//         name: name,
-//         email: email,
-//         phone: phone,
-//         address: address,
-//         city: city,
-//         isAdmin: isAdmin,
-//     }
-// }
 
 
 function UsersFromDataBase() {
-
     // const initialValues = mapFormUserValues();
     // const [values, setValues] = useState(initialValues);
     const [users, setUsers] = useState([]);
+    const [user, setUser] = useState({});
     const usersCollectionRef = collection(db, "users");
     const [updateRecord, setUpdateRecord] = useState([]);
     const [isHidden, setIsHidden] = useState(true);
 
-    const updateUser = async (id, nickname, name, email, phone, address, city, isAdmin) => {
-        const userDoc = doc(db, "users", id);
+    const handleInputChange = (e) => {
+        e.preventDefault();
+        const target = e.target;
+        const name = target.name;
+        setUser({...user, [name]: target.value});
+    }
+
+    const addUserToDataBase = async () => {
+        const userDoc = collection(db, "users");
         const newFields = {
-            nickname: nickname, name: name, email: email, phone: phone, address: address, city: city, isAdmin: false,
-        };
-        await updateDoc(userDoc, newFields);
-    };
+            nickname: user.nickname,
+            name: user.name,
+            email: user.email,
+            phone: user.phone,
+            address: user.address,
+            city: user.city,
+            isAdmin: user.isAdmin,
+        }
+        addDoc(userDoc, newFields);
+    }
 
-
-    // function handleChange(event) {
-    //     const { name, value } = event.target;
-    //     setValues(values => ({ ...values, [name]: value }));
-    // }
 
 
     const updateUserRecord = async (field, value) => {
@@ -50,7 +47,7 @@ function UsersFromDataBase() {
 
 
     const deleteUser = async () => {
-        const userDoc = doc(db, "users", doc.id);
+        const userDoc = collection(db, "users", doc.id);
         await deleteDoc(userDoc);
     };
 
@@ -65,105 +62,166 @@ function UsersFromDataBase() {
     }, []);
 
 
-    return (<>
-        <table className="users__table">
-            <thead>
-            <tr>
-                <th>Nickname</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>IsAdmin</th>
-            </tr>
-            </thead>
-            <tbody>
-            {users.map((user) => {
-                return (<tr key={user.id}>
+    return (
+        <>
 
-                    <td>{user.nickname}
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
+            <div>
 
-                        <button name={user.nickname} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
-                        <input
-                            type="text"
-                            value={user.nickname}
-                            name={user.nickname}
-                            onChange={(e) => updateUserRecord(user.id, e.target.value)}
-                            placeholder="Nickname..."
-                            hidden={isHidden}
-                        />
-                        <button onClick={() => updateUserRecord(user.id, "nickname", user.nickname)}>Update</button>
-                    </td>
+                <h2>
+                    Add user to database
+                </h2>
+                <form className="users__form" onSubmit={addUserToDataBase}>
+                    <div className="users__form-row">
+                        <label>Nickname</label>
+                        <input value={user.nickname} onChange={handleInputChange} type="text" id="nickname" name="nickname"
+                               placeholder="Nickname"/>
+                        <label>Name</label>
+                        <input value={user.name} onChange={handleInputChange} type="text" id="name" name="name" placeholder="Name"/>
+                        <label>Email</label>
+                        <input value={user.email} onChange={handleInputChange} type="text" id="email" name="email" placeholder="Email"/>
+                        <label>Phone</label>
+                        <input value={user.phone} onChange={handleInputChange} type="text" id="phone" name="phone" placeholder="Phone"/>
+                        <label>Address</label>
+                        <input value={user.address} onChange={handleInputChange} type="text" id="address" name="address" placeholder="Address"/>
+                        <label>City</label>
+                        <input value={user.city} onChange={handleInputChange} type="text" id="city" name="city" placeholder="City"/>
+                        <label>Is Admin</label>
+                        <input onChange={handleInputChange} type="checkbox" id="isAdmin" name="isAdmin"
 
-                    <td>{user.name}</td>
-                    <button name={user.name} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
-                    <input
-                        type="text"
-                        value={user.name}
-                        name={user.name}
-                        onChange={(e) => updateUserRecord(user.id, e.target.value)}
-                        placeholder="Name ..."
-                        hidden={isHidden}
-                    />
-                    <button onClick={() => updateUserRecord(user.id, "name", user.name)}>Update</button>
-                    <td>{user.email}</td>
-                    <button name={user.email} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
-                    <input
-                        type="text"
-                        value={user.email}
-                        name={user.email}
-                        onChange={(e) => updateUserRecord(user.id, e.target.value)}
-                        placeholder="email ..."
-                        hidden={isHidden}
-                    />
-                    <button onClick={() => updateUserRecord(user.id, "email", user.name)}>Update</button>
-                    <td>{user.phone}</td>
-                    <button name={user.phone} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
-                    <input
-                        type="text"
-                        value={user.phone}
-                        name={user.phone}
-                        onChange={(e) => updateUserRecord(user.id, e.target.value)}
-                        placeholder="phone ..."
-                        hidden={isHidden}
-                    />
-                    <button onClick={() => updateUserRecord(user.id, "phone", user.phone)}>Update</button>
-                    <td>{user.address}</td>
-                    <button name={user.address} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
-                    <input
-                        type="text"
-                        value={user.address}
-                        name={user.address}
-                        onChange={(e) => updateUserRecord(user.id, e.target.value)}
-                        placeholder="address ..."
-                        hidden={isHidden}
-                    />
-                    <button onClick={() => updateUserRecord(user.id, "address", user.address)}>Update</button>
-                    <td>{user.city}</td>
+                               placeholder="Is Admin"/>
+                        <button className="users__form-button" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
 
-                    <button name={user.city} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
-                    <input
-                        type="text"
-                        value={user.city}
-                        name={user.city}
-                        onChange={(e) => updateUserRecord(user.id, e.target.value)}
-                        placeholder="city ..."
-                        hidden={isHidden}
-                    />
-                    <button onClick={() => updateUserRecord(user.id, "address", user.city)}>Update</button>
+            <h2>
+                All Users from DataBase
+            </h2>
+            <table className="users__table">
 
-                </tr>);
-            })}
-            </tbody>
-        </table>
+                <thead>
+                <tr>
+                    <th>Nickname</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Permission</th>
+                </tr>
+                </thead>
+                <tbody>
+                {users.map((user) => {
+                    return (<tr key={user.id}>
+
+                        <td>{user.nickname}
+                            <br/>
+                            <tr>
+                                <input
+                                    type="text"
+                                    value={user.nickname}
+                                    name={user.nickname}
+                                    onChange={(e) => updateUserRecord(user.id, e.target.value)}
+                                    placeholder="Nickname..."
+                                    hidden={isHidden}
+                                />
+                                <button name={user.nickname} onClick={(e) => setIsHidden(!isHidden)}>Want Update
+                                </button>
+                                <button onClick={() => updateUserRecord(user.id, "nickname", user.nickname)}>Update
+                                </button>
+                            </tr>
+
+                        </td>
+
+                        <td>{user.name}
+
+                            <tr>
+                                <input
+                                    type="text"
+                                    value={user.name}
+                                    name={user.name}
+                                    onChange={(e) => updateUserRecord(user.id, e.target.value)}
+                                    placeholder="Name ..."
+                                    hidden={isHidden}
+                                />
+                                <button name={user.name} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
+                                <button onClick={() => updateUserRecord(user.id, "name", user.name)}>Update</button>
+                            </tr>
+                        </td>
+
+                        <td>{user.email}
+
+                            <tr>
+                                <input
+                                    type="text"
+                                    value={user.email}
+                                    name={user.email}
+                                    onChange={(e) => updateUserRecord(user.id, e.target.value)}
+                                    placeholder="email ..."
+                                    hidden={isHidden}
+                                />
+                                <button name={user.email} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
+                                <button onClick={() => updateUserRecord(user.id, "email", user.name)}>Update</button>
+                            </tr>
+
+                        </td>
+                        <td>{user.phone}
+
+                            <tr>
+                                <input
+                                    type="text"
+                                    value={user.phone}
+                                    name={user.phone}
+                                    onChange={(e) => updateUserRecord(user.id, e.target.value)}
+                                    placeholder="phone ..."
+                                    hidden={isHidden}
+                                />
+                                <button name={user.phone} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
+                                <button onClick={() => updateUserRecord(user.id, "phone", user.phone)}>Update</button>
+                            </tr>
+
+                        </td>
+                        <td>{user.address}
+
+                            <tr>
+                                <input
+                                    type="text"
+                                    value={user.address}
+                                    name={user.address}
+                                    onChange={(e) => updateUserRecord(user.id, e.target.value)}
+                                    placeholder="address ..."
+                                    hidden={isHidden}
+                                />
+                                <button name={user.address} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
+                                <button onClick={() => updateUserRecord(user.id, "address", user.address)}>Update
+                                </button>
+                            </tr>
+                        </td>
+                        <td>{user.city}
 
 
-    </>)
+                            <tr>
+                                <input
+                                    type="text"
+                                    value={user.city}
+                                    name={user.city}
+                                    onChange={(e) => updateUserRecord(user.id, e.target.value)}
+                                    placeholder="city ..."
+                                    hidden={isHidden}
+                                />
+                                <button name={user.city} onClick={(e) => setIsHidden(!isHidden)}>Want Update</button>
+                                <button onClick={() => updateUserRecord(user.id, "address", user.city)}>Update</button>
+                            </tr>
+
+                        </td>
+                    </tr>);
+                })}
+                </tbody>
+            </table>
+
+
+        </>
+    )
 }
 
 export default UsersFromDataBase;
