@@ -55,7 +55,7 @@ function UsersFromDataBase() {
         const getUsers = async () => {
             const data = await getDocs(usersCollectionRef);
             setUsers(data.docs.map((doc) => ({
-                ...doc.data(), id: doc.id
+                ...doc.data(), id: doc.id, hidden: true
             })))
         };
         getUsers();

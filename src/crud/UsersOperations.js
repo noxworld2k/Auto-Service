@@ -36,4 +36,5 @@ class UserDataService {
     };
 }
 
-export default new UserDataService();
+export default UserDataService;
+

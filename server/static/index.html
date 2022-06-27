@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="">
+    imię: <br>
+    <input type="text" id="nameInput"> <br>
+    nazwisko: <br>
+    <input type="text" id="surnameInput"> <br>
+    <button type="submit">Wygeneruj odnośnik</button>
+
+
+</form>
+
+<a href="#"> Hestem odnośnikiem</a>
+
+<script>
+    const name = 'jakaś osoba';
+    const surname = 'Osoba Nazwisko';
+    const params = new URLSearchParams({
+        name,
+        surname,
+    });
+
+    const url = `http://localhost:3000/?` + params;
+
+    const a = document.querySelector('a');
+    a.setAttribute('href', url);
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = nameInput.value;
+        const surname = surnameInput.value;
+    })
+
+
+</script>
+
+</body>
+</html>
