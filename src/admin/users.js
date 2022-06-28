@@ -1,65 +1,63 @@
 import React, {useEffect, useState} from "react";
-import {db} from "../config";
 import "../scss/admin/users.scss"
-import {addDoc, collection, deleteDoc, doc, getDocs, updateDoc} from "firebase/firestore";
 
 
 
 function UsersFromDataBase() {
     // const initialValues = mapFormUserValues();
     // const [values, setValues] = useState(initialValues);
-    const [users, setUsers] = useState([]);
-    const [user, setUser] = useState({});
-    const usersCollectionRef = collection(db, "users");
-    const [updateRecord, setUpdateRecord] = useState([]);
-    const [isHidden, setIsHidden] = useState(true);
-
-    const handleInputChange = (e) => {
-        e.preventDefault();
-        const target = e.target;
-        const name = target.name;
-        setUser({...user, [name]: target.value});
-    }
-
-    const addUserToDataBase = async () => {
-        const userDoc = collection(db, "users");
-        const newFields = {
-            nickname: user.nickname,
-            name: user.name,
-            email: user.email,
-            phone: user.phone,
-            address: user.address,
-            city: user.city,
-            isAdmin: user.isAdmin,
-        }
-        addDoc(userDoc, newFields);
-    }
-
-
-
-    const updateUserRecord = async (field, value) => {
-        const userDoc = collection(db, "users", doc.id);
-        const newFields = {
-            [field]: value,
-        };
-        await updateDoc(userDoc, newFields);
-    }
-
-
-    const deleteUser = async () => {
-        const userDoc = collection(db, "users", doc.id);
-        await deleteDoc(userDoc);
-    };
-
-    useEffect(() => {
-        const getUsers = async () => {
-            const data = await getDocs(usersCollectionRef);
-            setUsers(data.docs.map((doc) => ({
-                ...doc.data(), id: doc.id, hidden: true
-            })))
-        };
-        getUsers();
-    }, []);
+    // const [users, setUsers] = useState([]);
+    // const [user, setUser] = useState({});
+    // const usersCollectionRef = collection(db, "users");
+    // const [updateRecord, setUpdateRecord] = useState([]);
+    // const [isHidden, setIsHidden] = useState(true);
+    //
+    // const handleInputChange = (e) => {
+    //     e.preventDefault();
+    //     const target = e.target;
+    //     const name = target.name;
+    //     setUser({...user, [name]: target.value});
+    // }
+    //
+    // const addUserToDataBase = async () => {
+    //     const userDoc = collection(db, "users");
+    //     const newFields = {
+    //         nickname: user.nickname,
+    //         name: user.name,
+    //         email: user.email,
+    //         phone: user.phone,
+    //         address: user.address,
+    //         city: user.city,
+    //         isAdmin: user.isAdmin,
+    //     }
+    //     addDoc(userDoc, newFields);
+    // }
+    //
+    //
+    //
+    // const updateUserRecord = async (field, value) => {
+    //     const userDoc = collection(db, "users", doc.id);
+    //     const newFields = {
+    //         [field]: value,
+    //     };
+    //     await updateDoc(userDoc, newFields);
+    // }
+    //
+    //
+    // const deleteUser = async () => {
+    //     const userDoc = collection(db, "users", doc.id);
+    //     await deleteDoc(userDoc);
+    // };
+    //
+    // useEffect(() => {
+    //     const getUsers = async () => {
+    //         const data = await getDocs(usersCollectionRef);
+    //         setUsers(data.docs.map((doc) => ({
+    //             ...doc.data(), id: doc.id, hidden: true
+    //         })))
+    //     };
+    //     getUsers();
+    // }, []);
 
 
     return (

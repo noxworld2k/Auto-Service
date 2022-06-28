@@ -1,5 +1,4 @@
 import React from 'react';
-import "firebase/auth";
 import './scss/main.scss';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Main from "./routes/main";

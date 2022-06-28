@@ -1,20 +1,23 @@
-import {addDoc, collection} from "firebase/firestore";
-import {db} from "../config";
-const docRef = collection(db, "users");
 
+const API = "http://localhost:3000";
 
-const addUserData = async (userData) => {
-    addDoc(docRef, userData).then
-        (() => {
-            console.log("Document successfully written!");
-        }).catch(error => {
-        console.error("Error writing document: ", error);
-    })
+const addData = async (userName, userEmail) => {
+    let userData = {
+        "userName": userName,
+        "email": userEmail
+    }
+    fetch(`${API}/${userName}/email/${userEmail}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)})
+        .then(response => response.json())
+        .then(userData => {
+            console.log(userData);
+        })
+        .catch(error => {
+            console.log(error);
+        });
 }
-
-
-
-
-export default addUserData;
-
-
+export default addData;

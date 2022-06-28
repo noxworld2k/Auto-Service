@@ -1,5 +1,5 @@
-const express = require('express');
 const createError = require('http-error');
+const express = require('express');
 const app = express();
 const path = require('path');
 // Ustawienia portu
@@ -20,6 +20,7 @@ app.use('/users', userRoutes);
 app.use(function(req, res, next) {
     next(createError(404, 'Not Found'));
 })
+
 app.use(function(err, req, res, next) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
